@@ -1,0 +1,26 @@
+<html>
+<body>
+  <div>
+    <form>
+      <div>
+        <label for="email">Email</label>
+        <input id="emailInput" type="email" placeholder="Enter your email" name="email" required />
+      </div>
+      <div>
+        <label for="subject">Subject</label>
+        <input id="subjectInput" type="text" placeholder="Enter subject" name="subject" accept-charset="utf-8" required />
+      </div>
+      <div class="form-group">
+        <label for="poruka">Message</label>
+        <textarea id="msgInput" type="text" placeholder="Enter message" rows="5" name="msg" accept-charset="utf-8" required></textarea>
+      </div>
+    </form>
+    <div>
+      <button id="submitBtn" type="button" onclick="sendMail()">Send</button>
+    </div>
+    <div id="ajaxResponseSuccess" role="alert"> </div>
+    <div id="ajaxResponseFail" role="alert"></div>
+  </div>
+  <script src="mailJS.js"></script>
+</body>
+</html>

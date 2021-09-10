@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>めがひらスキー場</title>
+    <link rel="shortcut icon" type="image/png" href="#"/>
+    <!-- import jquery ajax -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <!-- import bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- custom css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">  
+    <link rel="stylesheet" type="text/css" href="assets/css/k-grid.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/modal.css">
+    <link rel="stylesheet" href="./themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/small_screen.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div>
+            <div class="imglogo"><img src="./assets/images/logo.PNG" alt="anh logo"></div>
+          </div>
+    
+         
+          <a class="navbar-brand" href="./login.html">
+            <img src="assets/images/user.PNG" alt="anh customer">
+          <div class="longin-btn">ログイン</div>
+          </a>
+    
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          </div>
+        </nav>
+ 
+            <!-- Tab items -->
+      <div class="tabs justify-content-center">
+        <div class="tab-item active">時間券</div>
+        <div class="tab-item">回数券</div>
+        <div class="tab-item">入場券</div>
+        <div class="tab-item">その他</div>
+        <div class="line"></div>
+      </div>      
+    </header>
+        <!--menu-->
+<div class="menu-show">
+    <div class="menu-title">メニュー</div>
+    <div class="menu-items">
+        <a href="#">
+        <div class="menu-item">新規登録<span class="ti-angle-right"></span></div>
+        </a>
+        <a href="#">
+        <div class="menu-item menu-item-color">登録情報修正<span class="ti-angle-right"></span></div>
+        </a>
+    </div>
+</div> 
+    <div id="myModal" class="modal">
+        <div class="modal-content-i">
+            <div class="modal-header">
+                <h5 class="modal-title">カゴ</h5>
+                <div class="ti-ing-cart-full"></div>
+            </div>
+            <div class="cart-container">
+                <div class="cart-items">
+                    
+                </div>
+                <div class="cart-total">
+                    <strong class="cart-total-title">合計:</strong>
+                    <span class="cart-total-price">0YEN</span>
+                </div>
+            </div>
+    
+            </div>
+            <div class="cart">
+                <button type="button" class="btn btn-secondary close-footer">買い物を続ける</button>
+                <button type="button" class="btn btn-primary order">レジに進む</button>
+            </div>
+        </div>       
+    </div>  
+<div class="ttt">
+    <div class="cart-nav" id="cart-nav">
+
+    </div>
+    <div class="confirm" id="confirm">
+        <div class="confirm-nav">購入内容確認</div>
+        <div class="confirm-content">
+            <div class="confirm-content-item"  style="
+            flex: 1.5;">商品名</div>
+            <div class="confirm-content-item">数枚</div>
+            <div class="confirm-content-item">単価</div>
+            <div class="confirm-content-item">金額</div>
+        </div>
+        <div class="confirm-show"></div>
+        <div class="confirm-content-item">
+            <div class="tatol-confirm"></div>
+        </div>
+        <div class="confirm-botton">
+            <button type="button" class="btn btn-secondary close-confirm">カゴへ戻る</button>
+            <button type="button" class="btn btn-primary payment">決済へ進む</button>
+        </div>
+    </div>
+
+<!-- Tab content -->
+<div class="tab-content">
+  <div class="tab-pane active">
+    <div class="contindex">※入場料や消費税は含まれた金額になります。</div>
+    <div class="contindex2">時間はゲートを通過してからスタートです。</div>
+    <!--table 1-->  
+<div class="t-row">
+        <div class="t-k-col">
+            <div class="k-grid wide btn-cart" id="ticket1__0">
+<!--            <img src="assets/ticket/420801.png">
+                <div class="content-product-h3 none">9</div>
+                <div class="type none">時間券　おとな</div>
+                <div class="price none">5500</div>    -->
+            </div>
+        </div>
+        <div class="t-k-col">
+            <div class="k-grid wide btn-cart" id="ticket1__1">
+<!--                <img src="assets/ticket/420901.png">
+                <div class="content-product-h3 none">9</div>
+                <div class="type none">時間券　こども</div>
+                <div class="price none">4000</div>    -->
+            </div>
+        </div>     
+    </div>
+  
+    <div class="t-row">
+        <div class="t-k-col">
+            <div class="k-grid wide btn-cart" id="ticket1__2">
+<!--                <img src="assets/ticket/420501.png">
+                <div class="content-product-h3 none">6</div>
+                <div class="type none">時間券　おとな</div>
+                <div class="price none">5100</div>-->    
+            </div>
+        </div>
+        <div class="t-k-col">
+            <div class="k-grid wide btn-cart" id="ticket1__3">
+<!--                <img src="assets/ticket/420601.png">
+                <div class="content-product-h3 none">6</div>
+                <div class="type none">時間券　こども</div>
+                <div class="price none">3800</div>    -->
+            </div>
+        </div>        
+    </div>
+
+   <div class="t-row">
+        <div class="t-k-col">
+            <div class="k-grid wide btn-cart"  id="ticket1__4">
+<!--                <img src="assets/ticket/420201.png">
+                <div class="content-product-h3 none">4</div>
+                <div class="type none">時間券　おとな</div>
+                <div class="price none">4500</div>    -->
+            </div>
+        </div>
+            <div class="t-k-col">
+                <div class="k-grid wide btn-cart" id="ticket1__5">
+<!--                    <img src="assets/ticket/420301.png">
+                    <div class="content-product-h3 none">4</div>
+                    <div class="type none">時間券　こども</div>
+                    <div class="price none">3300</div>    -->
+                </div>
+            </div>        
+    </div>
+<div class="t-row">
+    <div class="t-k-col">
+        <div class="k-grid wide btn-cart" id="ticket1__6">
+<!--            <img src="assets/ticket/420101.png">
+            <div class="content-product-h3 none">3</div>
+            <div class="type none">時間券　おとな</div>
+            <div class="price none">4000</div>    -->
+        </div>
+    </div>
+        <div class="t-k-col">
+            <div class="k-grid wide btn-cart" id="ticket1__7">
+<!--                <img src="assets/ticket/0.png">
+                <div class="content-product-h3 none">0</div>
+                <div class="type none"></div>
+                <div class="price none">0</div>    -->
+            </div>
+        </div>        
+</div>
+<hr>
+   <div class="t-row">
+        <div class="t-k-col">
+            <div class="k-grid wide btn-cart" id="ticket1__9">
+<!--                <img src="assets/ticket/0.png">
+                <div class="content-product-h3 none">0</div>
+                <div class="type none"></div>
+                <div class="price none">0</div>    -->
+            </div>
+        </div>
+            <div class="t-k-col">
+                <div class="k-grid wide btn-cart" id="ticket1__10">
+<!--                    <img src="assets/ticket/421601.png">
+                    <div class="content-product-h3 none">0</div>
+                    <div class="type none">日ゴゴイチ券</div>
+                    <div class="price none">2800</div>    -->
+                </div>
+            </div>        
+    </div></div>
+   
+<div class="tab-pane">
+    <div class="cont">※入場料や消費税は含まれた金額になります。</div>
+    <!--table 2-  1-->
+    <div class="t-row">
+        <div class="t-k-col">
+            <div class="k-grid wide btn-cart" id="ticket1__11">
+<!--                <img src="assets/ticket/410001.png">
+                <div class="content-product-h3 none">1</div>
+                <div class="type none">回数券</div>
+                <div class="price none">1000</div>    -->
+            </div>
+        </div>
+            <div class="t-k-col">
+                <div class="k-grid wide btn-cart" id="ticket1__12">
+<!--                    <img src="assets/ticket/410201.png">
+                    <div class="content-product-h3 none">3</div>
+                    <div class="type none">回数券</div>
+                    <div class="price none">2000</div>    -->
+                </div>
+            </div>        
+    </div>
+<!--table 2-  2-->
+    <div class="t-row">
+        <div class="t-k-col">
+            <div class="k-grid wide btn-cart" id="ticket1__13">
+<!--                <img src="assets/ticket/410401.png">
+                <div class="content-product-h3 none">5</div>
+                <div class="type none">回数券</div>
+                <div class="price none">3000</div>    -->
+            </div>
+        </div>
+            <div class="t-k-col">
+                <div class="k-grid wide btn-cart" id="ticket1__14">
+<!--                    <img src="assets/ticket/0.png">
+                    <div class="content-product-h3 none">0</div>
+                    <div class="type none"></div>
+                    <div class="price none">0</div>    -->
+                </div>
+            </div>        
+    </div>
+
+<div class="contb">
+    回数の追加をされる場合は、リフト券を購入後もしくは使用後にインフォメーションセンターまでお持ちください。
+</div>
+  </div>
+  <!--table 3-  2-->
+<div class="tab-pane">
+    <div class="cont">※入場料や消費税は含まれた金額になります。</div>
+<div class="t-row">
+    <div class="t-k-col">
+        <div class="k-grid wide btn-cart" id="ticket1__15">
+<!--            <img src="assets/ticket/400001.png">
+            <div class="content-product-h3 none">入</div>
+            <div class="type none">場券</div>
+            <div class="price none">500</div>    -->
+        </div>
+    </div>
+        <div class="t-k-col">
+            <div class="k-grid wide btn-cart" id="ticket1__16">
+<!--                <img src="assets/ticket/0.png">
+                <div class="content-product-h3 none">0</div>
+                <div class="type none"></div>
+                <div class="price none">0</div>    -->
+            </div>
+        </div>        
+</div>     
+    
+  <div class="contb">
+    リフト券を購入している人は不要です。
+</div>
+
+  </div>
+  <!--table 4-  1-->
+  <div class="tab-pane">
+    <div class="cont">※入場料や消費税は含まれた金額になります。<br>
+    そり遊び、スタール初心社のかたはこちらをご購入ください。
+    </div>
+<div class="t-row">
+    <div class="t-k-col">
+        <div class="k-grid wide btn-cart" id="ticket1__17">
+<!--            <img src="assets/ticket/550101.png">
+            <div class="content-product-h3 none">特</div>
+            <div class="type none">別券</div>
+            <div class="price none">9999</div>    -->
+        </div>
+    </div>
+        <div class="t-k-col">
+            <div class="k-grid wide btn-cart" id="ticket1__18">
+<!--                <img src="assets/ticket/0.png">
+                <div class="content-product-h3 none">0</div>
+                <div class="type none"></div>
+                <div class="price none">0</div>    -->
+            </div>
+        </div>        
+    </div>
+</div>
+  </div>
+      
+<!-------------履歴---------------->
+<div class="history">
+    <div class="history-nav">履歴</div>
+    <div id="history-title-body">
+        <div class="history-title">予約日</div>
+        <div class="history-title">商品名</div>
+        <div class="history-title">枚数</div>
+    </div>
+    <div class="history-item">
+        ありません
+    </div>
+</div>
+<div class="info">
+    <div class="info-nav">ガイド</div>
+    <div class="info-item">
+            入力
+    </div>
+</div>
+
+
+
+<footer class="fooder">
+    <div class="k-grid wide">
+        <div class="k-row">
+            <div class="k-col foo f-left"><div class="ti-home"><div class="letter">ホーム</div></div></div>
+            <div class="k-col foo f-center"><div class="ti-list"><div class="letter">履歴</div></div></div>
+            <div class="k-col foo f-right"><div class="ti-info-alt"><div class="letter">ガイド</div></div></div>
+        </div>
+    </div>
+</footer>
+<script src="javascript/tapui.js"></script>
+<script src="javascript/modal.js"></script>
+<script src="javascript/main.js"></script>
+
+
+
+</body>
+</html>

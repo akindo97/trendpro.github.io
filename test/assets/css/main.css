@@ -1,0 +1,48 @@
+
+/*reset CSS */
+* {
+    padding:　0；
+    margin: 0;
+    box-sizing: border-box;
+    
+   
+}
+a{text-decoration: none}
+.header {
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    }
+.tip {
+    margin-top: 100px;
+}
+.ti-menu {
+    font-size: 35px;
+}
+.ti-user {
+    font-size: 35px;
+}
+
+#subnav {
+    text-align: center;
+    border-bottom: 1px solid #b29fa5;
+    
+    margin-top: -20px;
+}
+#subnav li a{
+    
+    padding: 0 39px;
+}
+
+.ticket {
+    margin: 15px;
+    border:1px solid black;
+    border-radius: 15px;
+    width: 90%;
+}
+
+}
+

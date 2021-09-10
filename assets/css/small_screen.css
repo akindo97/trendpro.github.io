@@ -1,0 +1,8 @@
+@media screen and (max-height: 680px) {
+  .cart-container {
+        height:380px;
+  }
+  .confirm-show {
+        height:350px
+  }
+}
